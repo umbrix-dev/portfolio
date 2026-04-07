@@ -938,6 +938,7 @@ return TileBuilder`
 
 <svelte:window onkeydown={handleKeydown} />
 
+<div class="wrapper">
 <div class="root" class:dark>
   <button class="toggle" onclick={() => (dark = !dark)} aria-label="Toggle theme">
     {#if dark}
@@ -1051,9 +1052,21 @@ return TileBuilder`
     </div>
   {/if}
 </div>
+</div>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:global(html), :global(body) {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 
   /* ── Variables ── */
   .root {
