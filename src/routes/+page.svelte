@@ -3,6 +3,9 @@
     import MoonIcon from "@lucide/svelte/icons/moon"
     import CopyIcon from "@lucide/svelte/icons/copy"
     import CheckIcon from "@lucide/svelte/icons/check"
+    import blueRoseDevelopmentImage from "$lib/assets/blueRoseDevelopment.png"
+    import creationStudiosImage from "$lib/assets/creationStudios.png"
+    import worldOfAssassinsImage from "$lib/assets/worldOfAssassins.png"
     import teamsData from "$lib/data/teams.json"
     import { projects } from "$lib/data/projects"
     import Highlight from "svelte-highlight"
@@ -13,6 +16,12 @@
     let darkMode = $state(true)
     let copiedDiscordUsername = $state(false)
     let copiedScript = $state(false)
+
+    const images = {
+        "blueRoseDevelopment": blueRoseDevelopmentImage,
+        "creationStudios": creationStudiosImage,
+        "worldOfAssassins": worldOfAssassinsImage
+    }
 
     async function copyDiscord() {
         await navigator.clipboard.writeText("umb.rph")
@@ -93,7 +102,7 @@
             {#each teamsData as teamData}
                 <a class="card" href={teamData.href} target="_blank" rel="noopener">
                     <div class="img-wrap">
-                        <img src={teamData.img} alt="">
+                        <img src={images[teamData.img]} alt="">
                     </div>
                     <div class="card-bottom">
                         <span class="card-title">{teamData.name}</span>
