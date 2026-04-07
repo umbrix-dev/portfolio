@@ -1,5 +1,13 @@
 <script>
-  let dark = $state(false);
+  import Highlight from "svelte-highlight";
+  import { lua } from "svelte-highlight/languages/lua";
+  import { vs } from "svelte-highlight/styles";
+  import { vs2015 } from "svelte-highlight/styles";
+
+  let lightStyle = vs;
+  let darkStyle = vs2015;
+
+  let dark = $state(true);
   let copied = $state(false);
 
   const projects = [
@@ -915,6 +923,12 @@ return TileBuilder`
 
   let selected = $state(null);
 
+  projects.forEach(element => {
+    element.scripts.forEach(script => {
+      script.content = script.content.replace("/\t/g", "    ");
+    })
+  });
+
   function openProject(p) {
     selected = p;
     document.body.style.overflow = "hidden";
@@ -937,6 +951,14 @@ return TileBuilder`
 </script>
 
 <svelte:window onkeydown={handleKeydown} />
+
+<svelte:head>
+  {#if dark}
+    {@html darkStyle}
+  {:else}
+    {@html lightStyle}
+  {/if}
+</svelte:head>
 
 <div class="wrapper">
 <div class="root" class:dark>
@@ -1031,7 +1053,8 @@ return TileBuilder`
                     <div class="code-header">
                     <span class="code-filename">{script.name}</span>
                     </div>
-                    <pre><code>{script.content}</code></pre>
+                    <!-- <pre><code>{script.content}</code></pre> -->
+                    <Highlight language={lua} code={script.content.replace(/\t/g, "    ")} />
                 </div>
                 {/each}
           </div>
@@ -1070,6 +1093,7 @@ return TileBuilder`
 
   /* ── Variables ── */
   .root {
+    /* scale: 1.25; */
     --bg: #f4f1ec;
     --bg2: #edeae4;
     --border: #ccc8c0;
@@ -1338,6 +1362,11 @@ return TileBuilder`
     flex-shrink: 0;
   }
 
+  .code-block {
+    padding: 10px;
+
+  }
+
   .code-filename {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -1351,6 +1380,10 @@ return TileBuilder`
     background: var(--code-bg);
     scrollbar-width: thin;
     scrollbar-color: var(--border) transparent;
+  }
+
+  pre, code {
+    tab-size: 2;
   }
 
   pre {
