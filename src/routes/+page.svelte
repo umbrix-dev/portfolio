@@ -163,15 +163,15 @@
                             <div class="code-block">
                                 <div class="code-header">
                                     <span class="code-filename">{script.name}</span>
+                                
+                                    <button class="copy-script-btn" onclick={() => copyScript(script.content)} title="Copy script">
+                                        {#if copiedScript}
+                                            <CheckIcon size="18" />
+                                        {:else}
+                                            <CopyIcon size="18" />
+                                        {/if}
+                                    </button>
                                 </div>
-
-                                <button class="copy-script-btn" onclick={() => copyScript(script.content)} title="Copy script">
-                                    {#if copiedScript}
-                                        <CheckIcon size="18" />
-                                    {:else}
-                                        <CopyIcon size="18" />
-                                    {/if}
-                                </button>
 
                                 <div class="code-content-wrapper">
                                     <Highlight language={lua} code={script.content.replace(/\t/g, "    ")} />
@@ -482,7 +482,9 @@
         background: var(--bg2-color);
         border-bottom: 1px solid var(--border);
         border-radius: 6px;
-        width: 87%;
+        display: flex;
+        /* justify-content: start; */
+        align-items: center;
     }
 
     .code-block {
@@ -493,13 +495,13 @@
     .copy-script-btn {
         cursor: pointer;
         color: var(--text-color);
-        background: var(--bg2-color);
-        padding: 10px;
+        background: var(--bg3-color);
+        /* padding: 10px; */
         border: none;
         border-radius: 6px;
-        position: absolute;
-        top: 10px;
-        right: 10px;
+        position: static;
+        /* top: 10px; */
+        /* right: 10px; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -508,7 +510,8 @@
     .code-filename {
         font-family: var(--font-mono);
         font-size: 11px;
-        color: var(--text-muted-color);
+        /* color: var(--text-muted-color); */
+        color: var(--text-color);
         letter-spacing: 0.05em;
     }
 
