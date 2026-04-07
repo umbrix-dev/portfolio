@@ -1034,6 +1034,13 @@ return TileBuilder`
         </svg>
         github
       </a>
+
+      <a class="footer-link" href="https://scriptdotparent.github.io/portfolio/" target="_blank" rel="noopener">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M10.59 13.41a1.996 1.996 0 0 1 0-2.82l3.18-3.18a2 2 0 1 1 2.83 2.83l-1.41 1.41 1.41 1.41 1.41-1.41a4 4 0 0 0-5.66-5.66l-3.18 3.18a4 4 0 0 0 0 5.66l.71.71 1.41-1.41-.7-.72zm2.82-2.82a1.996 1.996 0 0 1 0 2.82l-3.18 3.18a2 2 0 1 1-2.83-2.83l1.41-1.41-1.41-1.41-1.41 1.41a4 4 0 1 0 5.66 5.66l3.18-3.18a4 4 0 0 0 0-5.66l-.71-.71-1.41 1.41.7.72z"/>
+        </svg>
+       credit
+      </a>
     </footer>
   </main>
 
