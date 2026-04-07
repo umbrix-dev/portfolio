@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Blue Rose Development",
+        "href": "https://www.roblox.com/communities/32890507/Blue-Rose-Development#!/about",
+        "img": "/src/lib/assets/blueRoseDevelopment.png"
+    },
+    {
+        "name": "Creation Studios",
+        "href": "error",
+        "img": "/src/lib/assets/creationStudios.png"
+    },
+    {
+        "name": "World of Assassins",
+        "href": "https://www.roblox.com/communities/829791647/World-of-Assassins#!/about",
+        "img": "/src/lib/assets/worldOfAssassins.png"
+    }
+]
