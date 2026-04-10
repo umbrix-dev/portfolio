@@ -938,7 +938,7 @@ return TileBuilder`
 		- build()
 		
 	// Examples usage (server)
-	```
+	``
 		local Players = game:GetService("Players")
 
 		local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -958,7 +958,7 @@ return TileBuilder`
 				print("Character:", character.Name, "got removed!")
 			end)
 		end)
-	```
+	``
 ]]
 
 --!strict
