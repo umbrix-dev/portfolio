@@ -909,7 +909,7 @@ return TileBuilder`
     },
 	{
 		id: 6,
-		title: "Centax"
+		title: "Centax",
 		description: "A simple to use shared context module.",
 		scripts: [
 			{
